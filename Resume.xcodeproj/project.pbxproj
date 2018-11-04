@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73176DC218E9749002677E6 /* UIFontCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73176DB218E9749002677E6 /* UIFontCodable.swift */; };
+		C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7540E0A21802B2D00F5638F /* ResumePageView.swift */; };
+		C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */; };
+		C75D9C0E2180252400D5CAA3 /* ResumeDisplayPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */; };
+		C75D9C112180270C00D5CAA3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75D9C102180270C00D5CAA3 /* WebKit.framework */; };
 		C79523992172B01B009441DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523982172B01B009441DC /* AppDelegate.swift */; };
-		C795239B2172B01B009441DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795239A2172B01B009441DC /* ViewController.swift */; };
-		C795239E2172B01C009441DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C795239C2172B01C009441DC /* Main.storyboard */; };
 		C79523A02172B01D009441DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C795239F2172B01D009441DC /* Assets.xcassets */; };
 		C79523A32172B01D009441DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79523A12172B01D009441DC /* LaunchScreen.storyboard */; };
 		C79523AE2172B01D009441DC /* ResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523AD2172B01D009441DC /* ResumeTests.swift */; };
+		C79523B92172B075009441DC /* ResumeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523B82172B075009441DC /* ResumeDisplayViewController.swift */; };
+		C79523BF2172B1CE009441DC /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523BE2172B1CD009441DC /* models.swift */; };
+		C79523C22173C965009441DC /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C12173C965009441DC /* OverviewView.swift */; };
+		C79523C42173C996009441DC /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C32173C996009441DC /* SchoolView.swift */; };
+		C79523C62173C9AE009441DC /* JobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C52173C9AE009441DC /* JobView.swift */; };
+		C79523C82173C9CB009441DC /* SkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C72173C9CB009441DC /* SkillView.swift */; };
+		C79523CA2173C9D9009441DC /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C92173C9D9009441DC /* ProjectView.swift */; };
+		C79523CC2173C9E4009441DC /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523CB2173C9E4009441DC /* OtherView.swift */; };
+		C79523CE2173CA6E009441DC /* ResumeElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523CD2173CA6E009441DC /* ResumeElementView.swift */; };
+		C79523D02173DF5F009441DC /* GeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523CF2173DF5F009441DC /* GeneralTableViewCell.swift */; };
+		C79523D22173FF11009441DC /* ResumeRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523D12173FF11009441DC /* ResumeRepo.swift */; };
+		C79523D621741680009441DC /* resume.json in Resources */ = {isa = PBXBuildFile; fileRef = C79523D521741680009441DC /* resume.json */; };
+		C79523D8217BC234009441DC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523D7217BC234009441DC /* Fonts.swift */; };
+		C79523DB217D238C009441DC /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523DA217D238C009441DC /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +43,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73176DB218E9749002677E6 /* UIFontCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCodable.swift; sourceTree = "<group>"; };
+		C7540E0A21802B2D00F5638F /* ResumePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePageView.swift; sourceTree = "<group>"; };
+		C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayPageViewController.swift; sourceTree = "<group>"; };
+		C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResumeDisplayPageViewController.xib; sourceTree = "<group>"; };
+		C75D9C102180270C00D5CAA3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C79523952172B01B009441DC /* Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79523982172B01B009441DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C795239A2172B01B009441DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C795239D2172B01C009441DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C795239F2172B01D009441DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C79523A22172B01D009441DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C79523A42172B01D009441DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C79523A92172B01D009441DC /* ResumeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79523AD2172B01D009441DC /* ResumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTests.swift; sourceTree = "<group>"; };
 		C79523AF2172B01D009441DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C79523B82172B075009441DC /* ResumeDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayViewController.swift; sourceTree = "<group>"; };
+		C79523BE2172B1CD009441DC /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		C79523C12173C965009441DC /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		C79523C32173C996009441DC /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
+		C79523C52173C9AE009441DC /* JobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView.swift; sourceTree = "<group>"; };
+		C79523C72173C9CB009441DC /* SkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillView.swift; sourceTree = "<group>"; };
+		C79523C92173C9D9009441DC /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		C79523CB2173C9E4009441DC /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		C79523CD2173CA6E009441DC /* ResumeElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeElementView.swift; sourceTree = "<group>"; };
+		C79523CF2173DF5F009441DC /* GeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewCell.swift; sourceTree = "<group>"; };
+		C79523D12173FF11009441DC /* ResumeRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeRepo.swift; sourceTree = "<group>"; };
+		C79523D521741680009441DC /* resume.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resume.json; sourceTree = "<group>"; };
+		C79523D7217BC234009441DC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C79523DA217D238C009441DC /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75D9C112180270C00D5CAA3 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +91,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C75D9C0A2180245F00D5CAA3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C79523B82172B075009441DC /* ResumeDisplayViewController.swift */,
+				C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */,
+				C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C75D9C0F2180270B00D5CAA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C75D9C102180270C00D5CAA3 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C795238C2172B01B009441DC = {
 			isa = PBXGroup;
 			children = (
 				C79523972172B01B009441DC /* Resume */,
 				C79523AC2172B01D009441DC /* ResumeTests */,
 				C79523962172B01B009441DC /* Products */,
+				C75D9C0F2180270B00D5CAA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +131,12 @@
 		C79523972172B01B009441DC /* Resume */ = {
 			isa = PBXGroup;
 			children = (
+				C79523D421741377009441DC /* Resources */,
 				C79523982172B01B009441DC /* AppDelegate.swift */,
-				C795239A2172B01B009441DC /* ViewController.swift */,
-				C795239C2172B01C009441DC /* Main.storyboard */,
+				C79523D9217BC23B009441DC /* Style */,
+				C79523D32173FF1A009441DC /* Repo */,
+				C75D9C0A2180245F00D5CAA3 /* ViewControllers */,
+				C79523BA2172B07B009441DC /* ResumeDisplay */,
 				C795239F2172B01D009441DC /* Assets.xcassets */,
 				C79523A12172B01D009441DC /* LaunchScreen.storyboard */,
 				C79523A42172B01D009441DC /* Info.plist */,
@@ -94,6 +151,65 @@
 				C79523AF2172B01D009441DC /* Info.plist */,
 			);
 			path = ResumeTests;
+			sourceTree = "<group>";
+		};
+		C79523BA2172B07B009441DC /* ResumeDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				C7540E0A21802B2D00F5638F /* ResumePageView.swift */,
+				C79523C02173C937009441DC /* CellViews */,
+				C79523BD2172B1AD009441DC /* Model */,
+			);
+			path = ResumeDisplay;
+			sourceTree = "<group>";
+		};
+		C79523BD2172B1AD009441DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C79523BE2172B1CD009441DC /* models.swift */,
+				C73176DB218E9749002677E6 /* UIFontCodable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C79523C02173C937009441DC /* CellViews */ = {
+			isa = PBXGroup;
+			children = (
+				C79523CD2173CA6E009441DC /* ResumeElementView.swift */,
+				C79523CF2173DF5F009441DC /* GeneralTableViewCell.swift */,
+				C79523DA217D238C009441DC /* SectionHeaderView.swift */,
+				C79523C12173C965009441DC /* OverviewView.swift */,
+				C79523C32173C996009441DC /* SchoolView.swift */,
+				C79523C52173C9AE009441DC /* JobView.swift */,
+				C79523C72173C9CB009441DC /* SkillView.swift */,
+				C79523C92173C9D9009441DC /* ProjectView.swift */,
+				C79523CB2173C9E4009441DC /* OtherView.swift */,
+			);
+			path = CellViews;
+			sourceTree = "<group>";
+		};
+		C79523D32173FF1A009441DC /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				C79523D12173FF11009441DC /* ResumeRepo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		C79523D421741377009441DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C79523D521741680009441DC /* resume.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C79523D9217BC23B009441DC /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				C79523D7217BC234009441DC /* Fonts.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C79523A32172B01D009441DC /* LaunchScreen.storyboard in Resources */,
+				C79523D621741680009441DC /* resume.json in Resources */,
+				C75D9C0E2180252400D5CAA3 /* ResumeDisplayPageViewController.xib in Resources */,
 				C79523A02172B01D009441DC /* Assets.xcassets in Resources */,
-				C795239E2172B01C009441DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +314,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C795239B2172B01B009441DC /* ViewController.swift in Sources */,
+				C73176DC218E9749002677E6 /* UIFontCodable.swift in Sources */,
+				C79523C62173C9AE009441DC /* JobView.swift in Sources */,
+				C79523C42173C996009441DC /* SchoolView.swift in Sources */,
+				C79523D8217BC234009441DC /* Fonts.swift in Sources */,
+				C79523D22173FF11009441DC /* ResumeRepo.swift in Sources */,
+				C79523CE2173CA6E009441DC /* ResumeElementView.swift in Sources */,
+				C79523D02173DF5F009441DC /* GeneralTableViewCell.swift in Sources */,
+				C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */,
+				C79523CC2173C9E4009441DC /* OtherView.swift in Sources */,
+				C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */,
+				C79523B92172B075009441DC /* ResumeDisplayViewController.swift in Sources */,
+				C79523BF2172B1CE009441DC /* models.swift in Sources */,
+				C79523C82173C9CB009441DC /* SkillView.swift in Sources */,
 				C79523992172B01B009441DC /* AppDelegate.swift in Sources */,
+				C79523DB217D238C009441DC /* SectionHeaderView.swift in Sources */,
+				C79523CA2173C9D9009441DC /* ProjectView.swift in Sources */,
+				C79523C22173C965009441DC /* OverviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C795239C2172B01C009441DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C795239D2172B01C009441DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C79523A12172B01D009441DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

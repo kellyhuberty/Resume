@@ -16,6 +16,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    
+        
+        
+        
+        let resumeVC = ResumeDisplayViewController(nibName: nil, bundle: nil)
+        let resumeNC = UINavigationController(rootViewController: resumeVC )
+        
+        let pageVC = ResumeDisplayPageViewController(nibName: nil, bundle: nil)
+        let pageNC = UINavigationController(rootViewController: pageVC )
+
+        
+   
+        
+        let tabBarController = UITabBarController(nibName: nil, bundle: nil)
+        
+        tabBarController.viewControllers = [resumeNC, pageNC]
+        
+        
+        ResumeRepo.shared.fetchResume(success: { (resume) in
+            DispatchQueue.main.async {
+                
+                Fonts.setBaseFonts(fontDictionary: resume.style.fonts)
+
+                
+                resumeVC.resume = resume
+                pageVC.resume = resume
+            }
+        },
+            failure:  { (error) in
+            
+                //TODO: failure code here
+                print("debug description: \(error.debugDescription)")
+        })
+        
+        
+        window = UIWindow()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
