@@ -11,12 +11,14 @@
         "pageMargin":60,
         "fonts":{
             "header" : {"name": "Futura", "size": 20},
-            "namedHeader" : {"name": "Futura", "size": 24},
+            "sectionHeader" : {"name": "Helvetica", "size": 24},
+            "namedHeader" : {"name": "Futura", "size": 32},
             "missionTitle" : {"name": "Georgia-Bold", "size": 30},
             "missionDetail" : {"name": "Georgia", "size": 28},
             "info" : {"name": "Futura", "size": 19},
             "title" : {"name": "Futura", "size": 16.5},
             "body" : {"name": "ArialMT", "size": 14.5},
+            "detail" : {"name": "Arial-BoldMT", "size": 14.5},
             "label" : {"name": "Arial-BoldMT", "size": 7.5}
         }
     },
@@ -39,7 +41,7 @@
         },
         "other" : {
             "title":"Other Stuff",
-            "pageOrientation":"vertical"
+            "pageOrientation":"horizontal"
         }
     },
 	"missionStatement": {
@@ -108,6 +110,7 @@
                 "CSS",
                 "JSON",
                 "XML",
+                "YAML",
                 "Markdown"
             ]
 		},
@@ -117,7 +120,8 @@
                 "Apache",
                 "Nginx",
                 "mysqld",
-                "RegEx"
+                "RegEx",
+                "WordPress"
             ]
 		},
         {
@@ -135,9 +139,12 @@
                 "Netbeans",
                 "Eclipse",
                 "Adobe Photoshop",
-                "Illustrator",
-                "Indesign",
-                "Acrobat Pro"
+                "Adobe Illustrator",
+                "Adobe Indesign",
+                "BBEdit",
+                "Coda",
+                "Transmit",
+                "OmniGraffle"
             ]
         },
         {
@@ -155,42 +162,44 @@
                 "AppKit",
                 "CoreData",
                 "CoreGraphics",
+                "Almofire",
+                "AFNetworking",
                 "CoreAnimation",
                 "Objc-Runtime",
                 "AVFoundation",
                 "Core Plot"
             ]
         }
-
 	],
 	"projects": [
         {
             "title": "Marshmallow",
-            "detail": "My own set of libraries to assist in rapid iOS Development. Currently MarshmallowCore is open source. Currently I am re-writing parts in swift.",
-            "url": "github.com/kellyhuberty/MarshmallowCore"
+            "body": "My own set of libraries to assist in rapid iOS Development. Currently MarshmallowCore is open source. Currently I am re-writing parts in swift.",
+            "url": "http://github.com/kellyhuberty/MarshmallowCore"
         },
         {
             "title": "Stack Overflow",
-            "url:" : "stackoverflow.com/users/1413651/kellythedude"
+            "body": "My own set of ",
+            "url" : "http://stackoverflow.com/users/1413651/kellythedude"
         },
         {
             "title": "GitHub",
-            "url:" : "github.com/kellyhuberty"
+            "body": "My own set of libraries to assist in rapid iOS Development. ",
+            "url" : "http://github.com/kellyhuberty"
         }
-        
 	],
 	"other": [
         {
             "title": "Winona State Outstanding Student Recognition",
-            "detail": "I was one of two CS students to receive this recognition of my graduating class."
+            "body": "I was one of two CS students to receive this recognition of my graduating class."
         },
         {
             "title": "Publications",
-            "detail" : "I served as RCTC’s Newspaper editor-in-chief for one year and and their layout manager for three years. I won an award for page design in 2008."
+            "body" : "I served as RCTC’s Newspaper editor-in-chief for one year and and their layout manager for three years. I won an award for page design in 2008."
         },
         {
             "title": "After Work",
-            "detail" : "I enjoy drawing/design, rock music, automotive repair, rollerblading, camping and spending time with my family."
+            "body" : "I enjoy drawing/design, rock music, automotive repair, rollerblading, camping and spending time with my family."
         }
 	]
 }

@@ -115,6 +115,7 @@
 				C79523972172B01B009441DC /* Resume */,
 				C79523AC2172B01D009441DC /* ResumeTests */,
 				C79523962172B01B009441DC /* Products */,
+				C7FE05462197A13300AF4BD0 /* ExternalLibs */,
 				C75D9C0F2180270B00D5CAA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -210,6 +211,13 @@
 				C79523D7217BC234009441DC /* Fonts.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		C7FE05462197A13300AF4BD0 /* ExternalLibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExternalLibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

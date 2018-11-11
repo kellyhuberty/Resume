@@ -29,12 +29,14 @@ class Fonts {
 
     static let defaultBaseFonts:[String:UIFont] = [
         "header" : UIFont(name: "Futura", size: 20)!,
+        "sectionHeader" : UIFont(name: "Arial-BoldMT", size: 24)!,
         "namedHeader" : UIFont(name: "Futura", size: 24)!,
         "missionTitle" : UIFont(name: "Georgia-Bold", size: 30)!,
         "missionDetail" : UIFont(name: "Georgia", size: 28)!,
         "info" : UIFont(name: "Futura", size: 19)!,
         "title" : UIFont(name: "Futura", size: 16.5)!,
-        "body" : UIFont(name: "ArialMT", size: 14.5)!,
+        "detail" : UIFont(name: "ArialMT", size: 14.5)!,
+        "body" : UIFont(name: "Arial-BoldMT", size: 14.5)!,
         "label" : UIFont(name: "Arial-BoldMT", size: 7.5)!
     ]
     
@@ -50,9 +52,14 @@ class Fonts {
         self.dynamic = dynamic
     }
     
+    var sectionHeader:UIFont{
+        return scaledFontForFont(baseFonts["sectionHeader"]!)
+    }
+    
     var namedHeader:UIFont{
         return scaledFontForFont(baseFonts["namedHeader"]!)
     }
+    
     var info:UIFont{
         return scaledFontForFont(baseFonts["info"]!)
     }
@@ -69,6 +76,9 @@ class Fonts {
     }
     var title:UIFont{
         return scaledFontForFont(baseFonts["title"]!)
+    }
+    var detail:UIFont{
+        return scaledFontForFont(baseFonts["detail"]!)
     }
     var body:UIFont{
         return scaledFontForFont(baseFonts["body"]!)

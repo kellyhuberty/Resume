@@ -22,7 +22,7 @@ class ResumePageView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 0
         return stackView
         
     }()
@@ -86,7 +86,7 @@ class ResumePageView: UIView {
             views.append(view)
         }
         var section = ResumePageSectionView()
-        section.layoutDirection = .horizontal
+        section.sectionInfo = resume.sections.schools
         section.contentViews = views
         stack.addArrangedSubview(section)
 
@@ -100,7 +100,7 @@ class ResumePageView: UIView {
             views.append(view)
         }
         section = ResumePageSectionView()
-        section.layoutDirection = .horizontal
+        section.sectionInfo = resume.sections.jobs
         section.contentViews = views
         stack.addArrangedSubview(section)
         
@@ -114,10 +114,9 @@ class ResumePageView: UIView {
             views.append(view)
         }
         section = ResumePageSectionView()
+        section.sectionInfo = resume.sections.skills
         section.contentViews = views
         stack.addArrangedSubview(section)
-        
-        
         
         views = []
         for item in resume.projects{
@@ -127,6 +126,7 @@ class ResumePageView: UIView {
             views.append(view)
         }
         section = ResumePageSectionView()
+        section.sectionInfo = resume.sections.projects
         section.contentViews = views
         stack.addArrangedSubview(section)
 
@@ -139,16 +139,29 @@ class ResumePageView: UIView {
             views.append(view)
         }
         section = ResumePageSectionView()
+        section.sectionInfo = resume.sections.other
         section.contentViews = views
         stack.addArrangedSubview(section)
         
-        
-        
-        
     }
     
-    
     class ResumePageSectionView : UIView {
+        
+        var sectionInfo:SectionInfo? {
+            didSet{
+                
+                guard let sectionInfo = sectionInfo else{
+                    layoutDirection = .vertical
+                    headerLabel.text = nil
+                    return
+                }
+
+                layoutDirection = sectionInfo.pageOrientation == .horizontal ? .horizontal : .vertical
+                
+                headerLabel.text = sectionInfo.title
+            }
+        }
+        
         
         var contentViews:[UIView] = []{
             didSet{
@@ -168,8 +181,8 @@ class ResumePageView: UIView {
             didSet{
                 if layoutDirection == .vertical {
                     contentView.axis = .vertical
-                    contentView.distribution = .fill
-                    contentView.spacing = 10
+                    contentView.distribution = .fillProportionally
+                    contentView.spacing = 0
                 }else{
                     contentView.axis = .horizontal
                     contentView.distribution = .fillEqually
@@ -181,6 +194,9 @@ class ResumePageView: UIView {
         
         private var headerLabel:UILabel = {
             let label = Label.make()
+            label.backgroundColor = .black
+            label.font = Fonts.still.sectionHeader
+            label.textColor = .white
             return label
         }()
         
@@ -188,6 +204,7 @@ class ResumePageView: UIView {
             let stackView = UIStackView()
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
+            stackView.spacing = 3.0
             return stackView
         }()
         
@@ -209,7 +226,8 @@ class ResumePageView: UIView {
                 headerLabel.topAnchor.constraint(equalTo:self.layoutMarginsGuide.topAnchor),
                 headerLabel.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
                 headerLabel.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
-                contentView.topAnchor.constraint(equalToSystemSpacingBelow:headerLabel.bottomAnchor, multiplier: 1),
+        
+                contentView.topAnchor.constraint(equalTo:headerLabel.bottomAnchor, constant:3),
                 contentView.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
                 contentView.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
                 contentView.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor),

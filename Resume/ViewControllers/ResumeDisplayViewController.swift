@@ -32,14 +32,18 @@ class ResumeDisplayViewController: UITableViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        title = "Overview"
+
+        title = NSLocalizedString("Overview", comment: "ResumeDisplayViewController title")
+        self.tabBarItem = UITabBarItem(title: title, image: UIImage(named: "Checkmark"), tag: 0)
         
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+        
+        super.init(coder: aDecoder)
+        
+        title = NSLocalizedString("Overview", comment: "ResumeDisplayViewController title")
+        self.tabBarItem = UITabBarItem(title: title, image: UIImage(named: "Checkmark"), tag: 0)    }
     
     //MARK: Lifecyle
 
@@ -149,6 +153,25 @@ class ResumeDisplayViewController: UITableViewController {
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = (tableView.cellForRow(at: indexPath) as? GeneralTableViewCell) else {
+            return
+        }
+        guard let view = (cell.view as? ResumeElementView) else {
+            return
+        }
+
+        guard let linkable = view.resumeElement as? ExternallyLinkable else {
+            return
+        }
+        guard let url = linkable.url as? URL else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
     
 }
 

@@ -56,15 +56,17 @@ class Resume : Decodable{
         let content: [String]
     }
     
-    struct Project: ResumeElement{
+    struct Project: ResumeElement, ExternallyLinkable, Bodyable{
         let title: String
         let detail: String?
+        let body: String?
         let url: URL?
     }
     
-    struct Other: ResumeElement{
+    struct Other: ResumeElement, Bodyable{
         let title: String
         let detail: String?
+        let body: String?
     }
     
     let sections:Sections
@@ -78,6 +80,14 @@ class Resume : Decodable{
 protocol ResumeElement : Decodable{
     var title: String { get }
     var detail: String? { get }
+}
+
+protocol ExternallyLinkable : Decodable{
+    var url: URL? { get }
+}
+
+protocol Bodyable : Decodable{
+    var body: String? { get }
 }
 
 struct Style : Codable{

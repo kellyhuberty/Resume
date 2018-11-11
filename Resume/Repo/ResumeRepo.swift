@@ -12,25 +12,25 @@ class ResumeRepo {
 
     static let shared = ResumeRepo()
     
-    static let resumeUrl = URL(fileURLWithPath: "https://foobarbucket.com/resume.json")
+    static let resumeUrl = URL(string: "https://foobarbucket.com/resume.json")!
     
     enum ResumeRepoError {
         case noUrl
         case parseError(Error)
     }
     
-    func fetchResume(success:((Resume) -> Void), failure:((ResumeRepoError?) -> Void)){
+    func fetchResume(success:@escaping((Resume) -> Void), failure:@escaping((ResumeRepoError?) -> Void)){
         
         fetchRemote(success: { (resume) in
             success(resume)
         }) { (error) in
-            fetchLocal(success:success, failure:failure)
+            self.fetchLocal(success:success, failure:failure)
         }
         
     }
     
     
-    func fetchLocal(success:((Resume) -> Void), failure:((ResumeRepoError?) -> Void)){
+    func fetchLocal(success:@escaping((Resume) -> Void), failure:@escaping((ResumeRepoError?) -> Void)){
         
         
         guard let url = Bundle.main.url(forResource: "resume", withExtension: "json") else {
@@ -59,9 +59,28 @@ class ResumeRepo {
     }
     
     
-    func fetchRemote(success:((Resume) -> Void), failure:((ResumeRepoError?) -> Void)){
+    func fetchRemote(success:@escaping((Resume) -> Void), failure:@escaping((ResumeRepoError?) -> Void)){
+                
+        let task = URLSession.shared.dataTask(with: ResumeRepo.resumeUrl) { (data, response, error) in
+            
+            guard let data = data, error == nil else{
+                failure(nil)
+                return
+            }
+            
+            
+            let jsonCoder = JSONDecoder()
+            
+            do{
+                let resume = try jsonCoder.decode(Resume.self, from: data)
+                success(resume)
+            }catch{
+                failure(ResumeRepoError.parseError(error))
+            }
+            
+        }
         
-        failure(.noUrl)
+        task.resume()
         
     }
     

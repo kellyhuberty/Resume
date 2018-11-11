@@ -13,7 +13,7 @@ class OverviewView: UIView {
     lazy var basicInfoStack:UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-stackView.spacing = 16
+        stackView.spacing = 16
         stackView.distribution = .fill
 
         stackView.addArrangedSubview(nameLabel)
@@ -71,15 +71,11 @@ stackView.spacing = 16
     
     let emailLabel:UILabel = {
         let label = Label.make()
-        
-        
         return label
     }()
     
     let phoneLabel:UILabel = {
         let label = Label.make()
-        
-        
         return label
     }()
     
@@ -151,7 +147,6 @@ stackView.spacing = 16
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         
         super.traitCollectionDidChange(previousTraitCollection)
-        
         self.loadTraitCollection(traitCollection)
         
     }

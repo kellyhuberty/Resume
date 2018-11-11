@@ -13,38 +13,57 @@ class ResumeDisplayPageViewController: UIViewController {
 
     @IBOutlet var webView:WKWebView!
     
+    var currentRendererContext:UIGraphicsPDFRendererContext?
 
-    
     var resume: Resume?{
         didSet{
+            
+            if resume != nil {
+                let barButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareItemAction(_:)))
+                navigationItem.rightBarButtonItem = barButtonItem
+            }else{
+                navigationItem.rightBarButtonItem = nil
+            }
+            
             renderPDF()
         }
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.title = NSLocalizedString("PDF Page", comment: "ResumeDisplayPageViewController PDF")
+        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(named: "ExportDoc"), tag: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.title = NSLocalizedString("PDF Page", comment: "ResumeDisplayPageViewController PDF")
+        
+        self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(named: "ExportDoc"), tag: 0)
+    }
+    
+    
+    @objc func shareItemAction(_ sender:Any?){
+        
+        let pdfData = createPDFData()
+        
+        let activityVC = UIActivityViewController(activityItems: [pdfData], applicationActivities: nil)
+        
+        activityVC.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
+        
+        present(activityVC, animated: true) {
+            
+        }
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
     
         super.viewDidAppear(animated)
-
-        //pageView.resume = resume
-
         
         renderPDF()
         
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
     func renderPDF(){
         
@@ -52,38 +71,8 @@ class ResumeDisplayPageViewController: UIViewController {
             return
         }
         
-        
-        let pdfData:NSMutableData = NSMutableData()
-        
-        let pdfWidth = resume?.style.pageSize.width ?? 1200
-        let pdfHeight = resume?.style.pageSize.height ?? 1600
+        let pdfData = createPDFData()
 
-        
-        
-        let pageView = ResumePageView(frame: .zero)
-
-        pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
-        
-        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 60)
-        
-        view.addSubview(pageView)
-        pageView.resume = resume
-                
-        // Points the pdf converter to the mutable data object and to the UIView to be converted
-        
-        UIGraphicsBeginPDFContextToData(pdfData, CGRect(x: 0, y: 0, width: 612, height: 792), nil)
-        UIGraphicsBeginPDFPageWithInfo(CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight), nil)
-        
-        let pdfContext = UIGraphicsGetCurrentContext()!
-        
-        pageView.layer.render(in: pdfContext)
-
-        UIGraphicsEndPDFContext()
-        
-
-
-
-        pageView.removeFromSuperview()
         
         let sandboxPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
@@ -93,8 +82,78 @@ class ResumeDisplayPageViewController: UIViewController {
         
         try! pdfData.write(to: url, options: [])
         
-        webView.load(Data(referencing: pdfData), mimeType: "application/pdf", characterEncodingName: "UTF-8", baseURL: URL(string: "http://localhost")!)
+        webView.load(pdfData, mimeType: "application/pdf", characterEncodingName: "UTF-8", baseURL: URL(string: "http://localhost")!)
         
     }
     
+    func createPDFData() -> Data{
+        
+        let pdfWidth = resume?.style.pageSize.width ?? 1200
+        let pdfHeight = resume?.style.pageSize.height ?? 1600
+        
+        
+        
+        let pageView = ResumePageView(frame: .zero)
+        
+        pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
+        
+        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 60)
+        
+        view.addSubview(pageView)
+        pageView.resume = resume
+        
+
+        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight))
+        
+        let pdfData = currentRenderer.pdfData { (context) in
+            context.beginPage()
+
+            self.currentRendererContext = context
+            
+            pageView.layer.render(in: context.cgContext)
+            
+            self.currentRendererContext = nil
+
+        }
+        
+        pageView.removeFromSuperview()
+        
+        return pdfData
+        
+    }
+    
+    
+    
+    
+    
+    
 }
+
+extension ResumeDisplayPageViewController : URLReceiver{
+    
+    @objc func drawUrl(_ url:URL, at rect:CGRect){
+        
+        guard let renderContext = currentRendererContext else{
+            return
+        }
+        
+        let urlRect = rect.applying(renderContext.cgContext.userSpaceToDeviceSpaceTransform)
+        
+        renderContext.setURL(url, for: urlRect)
+        
+    }
+
+    
+}
+
+
+
+@objc protocol URLReceiver{
+    
+    func drawUrl(_ url:URL, at:CGRect)
+    
+}
+
+
+
+

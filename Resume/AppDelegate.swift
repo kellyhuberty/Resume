@@ -13,7 +13,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var tableResumeViewController:ResumeDisplayViewController!
+    var pageResumeViewController:ResumeDisplayPageViewController!
+    
+    let activityIndicator:UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
 
+    fileprivate func loadResumeData() {
+        
+        activityIndicator.startAnimating()
+        
+        ResumeRepo.shared.fetchResume(success: { (resume) in
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+
+                Fonts.setBaseFonts(fontDictionary: resume.style.fonts)
+                
+                
+                self.tableResumeViewController.resume = resume
+                self.pageResumeViewController.resume = resume
+            }
+        },
+                                      failure:  { (error) in
+                                        DispatchQueue.main.async {
+                                            self.activityIndicator.stopAnimating()
+
+                                        
+                                        }
+                                        //TODO: failure code here
+                                        print("debug description: \(error.debugDescription)")
+        })
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
     
@@ -26,29 +61,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pageVC = ResumeDisplayPageViewController(nibName: nil, bundle: nil)
         let pageNC = UINavigationController(rootViewController: pageVC )
 
-        
-   
+        tableResumeViewController = resumeVC
+        pageResumeViewController = pageVC
         
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
         
         tabBarController.viewControllers = [resumeNC, pageNC]
         
+        tabBarController.view.addSubview(activityIndicator)
         
-        ResumeRepo.shared.fetchResume(success: { (resume) in
-            DispatchQueue.main.async {
-                
-                Fonts.setBaseFonts(fontDictionary: resume.style.fonts)
-
-                
-                resumeVC.resume = resume
-                pageVC.resume = resume
-            }
-        },
-            failure:  { (error) in
+        NSLayoutConstraint.activate([
             
-                //TODO: failure code here
-                print("debug description: \(error.debugDescription)")
-        })
+            tabBarController.view.topAnchor.constraint(equalTo:activityIndicator.topAnchor),
+            tabBarController.view.bottomAnchor.constraint(equalTo:activityIndicator.bottomAnchor),
+            tabBarController.view.leadingAnchor.constraint(equalTo:activityIndicator.leadingAnchor),
+            tabBarController.view.trailingAnchor.constraint(equalTo:activityIndicator.trailingAnchor)
+            
+            ])
+
+        
+        loadResumeData()
         
         
         window = UIWindow()
@@ -79,6 +111,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    @objc func openUrl(_ url:URL){
+        
+        
+        
+    }
+    
+    @objc func openMailViewController(with email:String){
+        
+        
+        
+    }
+    
+    
 
 
 }
