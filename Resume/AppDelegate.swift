@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import SafariServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var tabBarController:UITabBarController!
+    
     var tableResumeViewController:ResumeDisplayViewController!
     var pageResumeViewController:ResumeDisplayPageViewController!
+    
+    
     
     let activityIndicator:UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
@@ -64,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tableResumeViewController = resumeVC
         pageResumeViewController = pageVC
         
-        let tabBarController = UITabBarController(nibName: nil, bundle: nil)
+        tabBarController = UITabBarController(nibName: nil, bundle: nil)
         
         tabBarController.viewControllers = [resumeNC, pageNC]
         
@@ -112,9 +117,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    @objc func openUrl(_ url:URL){
+    @objc func openRemoteUrlLocally(_ url:URL){
         
+        let safariVC = SFSafariViewController(url: url)
         
+        tabBarController.present(safariVC, animated: true, completion: nil)
         
     }
     

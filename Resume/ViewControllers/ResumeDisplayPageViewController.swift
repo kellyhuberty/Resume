@@ -13,6 +13,11 @@ class ResumeDisplayPageViewController: UIViewController {
 
     @IBOutlet var webView:WKWebView!
     
+    var sandboxUrlPath:URL {
+        let sandboxPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        return URL(fileURLWithPath: sandboxPath).appendingPathComponent("blah").appendingPathExtension("pdf")
+    }
+    
     var currentRendererContext:UIGraphicsPDFRendererContext?
 
     var resume: Resume?{
@@ -57,6 +62,10 @@ class ResumeDisplayPageViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        webView.navigationDelegate = self
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
     
         super.viewDidAppear(animated)
@@ -73,10 +82,7 @@ class ResumeDisplayPageViewController: UIViewController {
         
         let pdfData = createPDFData()
 
-        
-        let sandboxPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        
-        let url = URL(fileURLWithPath: sandboxPath).appendingPathComponent("blah").appendingPathExtension("pdf")
+        let url = sandboxUrlPath
         
         print("url blah : \(url)")
         
@@ -155,5 +161,26 @@ extension ResumeDisplayPageViewController : URLReceiver{
 }
 
 
+extension ResumeDisplayPageViewController : WKNavigationDelegate{
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        guard let url = navigationAction.request.url else{
+            decisionHandler(WKNavigationActionPolicy.cancel)
+            return
+        }
+        
+        
+        if url == URL(string: "http://localhost/") {
+            decisionHandler(WKNavigationActionPolicy.allow)
+        }else{
+            decisionHandler(WKNavigationActionPolicy.cancel)
 
+            (UIApplication.shared.delegate as? AppDelegate)?.openRemoteUrlLocally(url)
+            
+        }
+        
+    }
+    
+}
 
