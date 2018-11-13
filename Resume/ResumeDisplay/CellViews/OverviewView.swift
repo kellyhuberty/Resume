@@ -10,6 +10,8 @@ import UIKit
 
 class OverviewView: UIView {
 
+    var forceRegular:Bool = false
+    
     lazy var basicInfoStack:UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +128,7 @@ class OverviewView: UIView {
         basicInfoStack.axis = .vertical
 
         
-        if traitCollection.horizontalSizeClass == .regular{
+        if traitCollection.horizontalSizeClass == .regular || forceRegular {
             fullStack.axis = .horizontal
             basicInfoStack.axis = .vertical
 

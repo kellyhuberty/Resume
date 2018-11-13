@@ -63,10 +63,11 @@ class Resume : Decodable{
         let url: URL?
     }
     
-    struct Other: ResumeElement, Bodyable{
+    struct Other: ResumeElement, Bodyable, ExternallyLinkable{
         let title: String
         let detail: String?
         let body: String?
+        let url: URL?
     }
     
     let sections:Sections

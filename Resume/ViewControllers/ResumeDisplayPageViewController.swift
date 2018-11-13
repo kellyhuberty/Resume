@@ -97,8 +97,6 @@ class ResumeDisplayPageViewController: UIViewController {
         let pdfWidth = resume?.style.pageSize.width ?? 1200
         let pdfHeight = resume?.style.pageSize.height ?? 1600
         
-        
-        
         let pageView = ResumePageView(frame: .zero)
         
         pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
@@ -107,7 +105,6 @@ class ResumeDisplayPageViewController: UIViewController {
         
         view.addSubview(pageView)
         pageView.resume = resume
-        
 
         let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight))
         
@@ -127,11 +124,6 @@ class ResumeDisplayPageViewController: UIViewController {
         return pdfData
         
     }
-    
-    
-    
-    
-    
     
 }
 
@@ -177,7 +169,6 @@ extension ResumeDisplayPageViewController : WKNavigationDelegate{
             decisionHandler(WKNavigationActionPolicy.cancel)
 
             (UIApplication.shared.delegate as? AppDelegate)?.openRemoteUrlLocally(url)
-            
         }
         
     }

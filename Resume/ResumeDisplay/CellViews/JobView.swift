@@ -12,6 +12,7 @@ class JobView: ResumeElementView {
 
     var positionLabel:UILabel = {
         let label = Label.make()
+        label.font = Fonts.changing.detail
         return label
     }()
     

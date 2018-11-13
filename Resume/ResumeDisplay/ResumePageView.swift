@@ -72,6 +72,7 @@ class ResumePageView: UIView {
         
         
         let overviewView = OverviewView()
+        overviewView.forceRegular = true
         overviewView.resume = resume
         stack.addArrangedSubview(overviewView)
         

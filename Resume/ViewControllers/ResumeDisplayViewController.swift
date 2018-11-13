@@ -170,7 +170,7 @@ class ResumeDisplayViewController: UITableViewController {
             return
         }
         
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        (UIApplication.shared.delegate as? AppDelegate)?.openRemoteUrlLocally(url)
     }
     
 }
