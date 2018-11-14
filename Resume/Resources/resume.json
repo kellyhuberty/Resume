@@ -1,8 +1,8 @@
 {
-	"name": "Kelly Huberty",
-	"address": "2311 23rd Street NW \nRochester MN, 55901",
-	"phone": "507-202-9368",
-	"email": "kellyhuberty@gmail.com",
+    "name": "Kelly Huberty",
+    "address": "2311 23rd Street NW \nRochester MN, 55901",
+    "phone": "507-202-9368",
+    "email": "kellyhuberty@gmail.com",
     "style":{
         "pageSize":{
             "width":1200,
@@ -32,7 +32,7 @@
             "pageOrientation":"horizontal"
         },
         "skills" : {
-            "title":"Specail Skills",
+            "title":"Special Skills",
             "pageOrientation":"vertical"
         },
         "projects" : {
@@ -40,25 +40,24 @@
             "pageOrientation":"vertical"
         },
         "other" : {
-            "title":"Other Stuff",
+            "title":"More About Me",
             "pageOrientation":"horizontal"
         }
     },
-	"missionStatement": {
-		"title": "I'm Kelly",
-		"detail": "I'm looking to continue working on great native iOS applications."
-	},
-	"schools": [
+    "missionStatement": {
+        "title": "I'm Kelly",
+        "detail": "I'm looking to continue working on great native iOS applications."
+    },
+    "schools": [
         {
-			"title": "Winona State University",
-			"degree": "Bachelor of Science, Computer Science (Fall 2011)",
+            "title": "Winona State University",
+            "degree": "Bachelor of Science, Computer Science (Fall 2011)",
             "gpa": "GPA: 3.93",
             "studied":[
                 "Computer Science",
-                "Programming",
-                "As a work study I helped work on the first iPhone development class at WSU."
+                "Programming"
             ]
-		},
+        },
         {
             "title": "Rochester Community and Technical College",
             "degree": "AS, Computer Science (2010) and AFA Liberal Arts (2009)",
@@ -70,78 +69,72 @@
                 "Art"
             ]
         }
-	],
-	"jobs": [
+    ],
+    "jobs": [
         {
-			"title": "Broker Exchange Network, LLC",
-			"position": "Application Programmer",
+            "title": "Broker Exchange Network, LLC",
+            "position": "Application Programmer",
             "detail": "2011 - 2015",
-			"content": [
-                "Performed maintenace on one of the largest IT equiptment broker websites.",
-				"Developed a small mobile web application and RESTful web service for their primary website.",
-				"Developed an internal tool for consuming inventory data from client emails.",
-				"Created a superset of the Blitz templating language and small compiling script to allow for localizations.",
+            "content": [
+                "Performed maintenance on large IT equipment broker websites.",
+                "Developed a small mobile web application and RESTful web service for their primary website.",
+                "Developed an internal tool for consuming inventory data from client emails.",
+                "Created a superset of the Blitz templating language and small compiler script for localizations.",
                 "Built custom IT part reseller websites for clients on the Magento and Joomla platforms.",
-                "Built several custom PHP scripts to deliver IT part data to several brokers.",
-			]
-		},
-		{
-			"title": "CoreLogic Solutions, LLC",
-			"position": "Software Engineer, Pro",
-			"detail": "2015 - Present",
-			"content": [
-				"Worked on new features and maintained primary realty listing app GoMLS.",
-                "Re-wrote deployment script for the app using Xcode command line tools, codesign, and Fastlane.",
-				"Wrote first version of iOS push notification server.",
-				"Developed prototype apps for the consumer housing and appraisal industries.",
-                "Worked on re-write of the housing listing app working close with designer to prototype new UX ideas",
-                "Implemented new and existing features in the re-write app: from UI with custom rendering/animations to the network stack to retrieve data."
-			]
-		}
-	],
-	"skills": [
-        {
-			"title": "Languages",
-			"content": [
-                "C++",
-                "Objective-C",
-                "Swift",
-                "Java",
-                "PHP",
-                "Bash",
-                "Javascript"
+                "Wrote several custom PHP scripts to deliver IT part data to several brokers.",
             ]
         },
-		{
-			"title": "Markups",
-			"content": [
+        {
+            "title": "CoreLogic Solutions, LLC",
+            "position": "Software Engineer, Pro",
+            "detail": "2015 - Present",
+            "content": [
+                "Performed maintenance and feature additions to a realty listing app.",
+                "Re-wrote deployment script for the app using Xcode command line tools, codesign, and Fastlane.",
+                "Wrote first version of an iOS push notification server.",
+                "Developed prototype apps for the realty and appraisal industries.",
+                "Worked on re-write of the realty listing app using Swift, and worked closely with designers on UX modifications.",
+                "Created new custom renderings/animations using Core Animation to greater enhance user experience.",
+                "Built application network layers to retrieve data from backend services.",
+                "Leveraged XCTest to exercise new code being developed using unit tests."
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "title": "Languages",
+            "content": [
+                "Objective-C",
+                "Swift",
+                "C++",
+                "PHP",
+                "Bash",
+                "Javascript",
+                "Java"
+            ]
+        },
+        {
+            "title": "Markups",
+            "content": [
                 "HTML",
                 "CSS",
                 "JSON",
                 "XML",
-                "YAML",
                 "Markdown"
             ]
-		},
-		{
-			"title": "Server/Admin",
-			"content": [
+        },
+        {
+            "title": "Server/Admin",
+            "content": [
                 "RESTful Services",
                 "SOAP",
                 "HTTP",
                 "Apache",
-                "Nginx",
                 "mysqld",
                 "RegEx",
-                "WordPress"
-            ]
-		},
-        {
-            "title": "Operating Systems",
-            "content": [
-                "macOS",
-                "Linux",
-                "Windows"
+                "WordPress",
+                "MySQL",
+                "SSH"
             ]
         },
         {
@@ -150,21 +143,12 @@
                 "Xcode",
                 "Netbeans",
                 "Eclipse",
-                "Adobe Photoshop",
-                "Adobe Illustrator",
-                "Adobe Indesign",
+                "Adobe Creative Suite",
                 "Graphic",
                 "BBEdit",
                 "Coda",
                 "Transmit",
                 "OmniGraffle"
-            ]
-        },
-        {
-            "title": "Databases",
-            "content": [
-                "MySQL",
-                "SQLite"
             ]
         },
         {
@@ -175,19 +159,38 @@
                 "AppKit",
                 "CoreData",
                 "CoreGraphics",
+                "CoreAnimation",
+                "CloudKit",
                 "Almofire",
                 "AFNetworking",
-                "CoreAnimation",
+                "Mockingjay",
+                "XCTest",
                 "ObjC-Runtime",
                 "AVFoundation",
-                "Core Plot"
+                "Core Plot",
+                "SQLite"
+            ]
+        },
+        {
+            "title": "Apple Platform Developer Technologies",
+            "content": [
+                "Auto Layout",
+                "Xcode Command line tools",
+                "Codesign",
+                "Provisioning Profiles",
+                "Asset Catalogs",
+                "CocoaPods",
+                "git",
+                "App Store Connect",
+                "xibs/nibs",
+                "Instruments"
             ]
         }
-	],
-	"projects": [
+    ],
+    "projects": [
         {
             "title": "Marshmallow",
-            "body": "My own set of libraries to assist in rapid iOS Development. Currently MarshmallowCore is open source. Currently I am re-writing parts in swift.",
+            "body": "My own set of libraries to assist in rapid iOS Development. MarshmallowCore is open source. I am currently re-writing parts in Swift.",
             "url": "http://github.com/kellyhuberty/MarshmallowCore"
         },
         {
@@ -198,11 +201,11 @@
             "title": "GitHub",
             "url" : "http://github.com/kellyhuberty"
         }
-	],
-	"other": [
+    ],
+    "other": [
         {
             "title": "Winona State Outstanding Student Recognition",
-            "body": "I was one of two CS students to receive this recognition of my graduating class."
+            "body": "I was one of two CS students to receive this recognition of my graduating class. Additionally, as a work study, I helped work on the first iPhone development class at WSU."
         },
         {
             "title": "Publications",
@@ -210,12 +213,12 @@
         },
         {
             "title": "After Work",
-            "body" : "I enjoy drawing/design, rock music, automotive repair, rollerblading, camping and spending time with my family."
+            "body" : "I enjoy drawing, design, rock music, automotive repair, rollerblading, camping, and spending time with my family."
         },
         {
             "title": "This Resume is an App",
             "body" : "This resume was generated by an app I wrote. Additional references are available upon request.",
             "url" : "http://github.com/kellyhuberty/resume"
         }
-	]
+    ]
 }

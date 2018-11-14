@@ -12,7 +12,7 @@ class ResumeRepo {
 
     static let shared = ResumeRepo()
     
-    static let resumeUrl = URL(string: "https://foobarbucket.com/resume.json")!
+    static let resumeUrl = URL(string: "https://foobarbucket.com/resources/resume.json")!
     
     enum ResumeRepoError {
         case noUrl

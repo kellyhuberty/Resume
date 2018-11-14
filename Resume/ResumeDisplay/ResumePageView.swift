@@ -182,7 +182,7 @@ class ResumePageView: UIView {
             didSet{
                 if layoutDirection == .vertical {
                     contentView.axis = .vertical
-                    contentView.distribution = .fillProportionally
+                    contentView.distribution = .equalSpacing
                     contentView.spacing = 0
                 }else{
                     contentView.axis = .horizontal
