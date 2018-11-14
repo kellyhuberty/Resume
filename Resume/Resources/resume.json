@@ -81,21 +81,21 @@
 				"Developed a small mobile web application and RESTful web service for their primary website.",
 				"Developed an internal tool for consuming inventory data from client emails.",
 				"Created a superset of the Blitz templating language and small compiling script to allow for localizations.",
-                "Built custom IT part reseller websites for clients on Magento and Joomla.",
+                "Built custom IT part reseller websites for clients on the Magento and Joomla platforms.",
                 "Built several custom PHP scripts to deliver IT part data to several brokers.",
 			]
 		},
 		{
 			"title": "CoreLogic Solutions, LLC",
 			"position": "Software Engineer, Pro",
-			"detail": "2015 - 2018",
+			"detail": "2015 - Present",
 			"content": [
-				"Worked on new features and maintained primary reality listing app GoMLS.",
+				"Worked on new features and maintained primary realty listing app GoMLS.",
                 "Re-wrote deployment script for the app using Xcode command line tools, codesign, and Fastlane.",
 				"Wrote first version of iOS push notification server.",
 				"Developed prototype apps for the consumer housing and appraisal industries.",
                 "Worked on re-write of the housing listing app working close with designer to prototype new UX ideas",
-                "Implemented new and existing feature in the re-write from UI and custom rendering/animations to network stack to retrieve data."
+                "Implemented new and existing features in the re-write app: from UI with custom rendering/animations to the network stack to retrieve data."
 			]
 		}
 	],
@@ -112,14 +112,6 @@
                 "Javascript"
             ]
         },
-        {
-            "title": "Web",
-            "content": [
-                "RESTful Services",
-                "SOAP",
-                "HTTP"
-            ]
-        },
 		{
 			"title": "Markups",
 			"content": [
@@ -132,8 +124,11 @@
             ]
 		},
 		{
-			"title": "Server Admin",
+			"title": "Server/Admin",
 			"content": [
+                "RESTful Services",
+                "SOAP",
+                "HTTP",
                 "Apache",
                 "Nginx",
                 "mysqld",
