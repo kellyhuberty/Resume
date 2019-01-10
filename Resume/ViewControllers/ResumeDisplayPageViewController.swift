@@ -95,7 +95,7 @@ class ResumeDisplayPageViewController: UIViewController {
     func createPDFData() -> Data{
         
         let pdfWidth = resume?.style.pageSize.width ?? 1200
-        let pdfHeight = resume?.style.pageSize.height ?? 1600
+        let pdfHeight = resume?.style.pageSize.height ?? 1500
         
         let pageView = ResumePageView(frame: .zero)
         
@@ -106,11 +106,11 @@ class ResumeDisplayPageViewController: UIViewController {
         view.addSubview(pageView)
         pageView.resume = resume
 
-        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight))
+        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: (8.5 * 72), height: (11 * 72)))
         
         let pdfData = currentRenderer.pdfData { (context) in
             context.beginPage()
-
+            context.cgContext.scaleBy(x: 0.51, y: 0.51)
             self.currentRendererContext = context
             
             pageView.layer.render(in: context.cgContext)

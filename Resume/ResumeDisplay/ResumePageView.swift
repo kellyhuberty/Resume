@@ -37,7 +37,7 @@ class ResumePageView: UIView {
             stack.topAnchor.constraint(equalTo:self.layoutMarginsGuide.topAnchor),
             stack.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
-            //stack.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor)
+            stack.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor)
         ])
         
         
@@ -54,7 +54,7 @@ class ResumePageView: UIView {
             stack.topAnchor.constraint(equalTo:self.layoutMarginsGuide.topAnchor),
             stack.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
-            //stack.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor)
+            stack.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor)
             ])
         
         
