@@ -16,7 +16,7 @@ class ResumeDisplayViewController: UITableViewController {
         }
     }
     
-    enum CellSection: String, CellSectionable {
+    enum CellSection: String, CaseIterable {
 
         case overview = "Overview"
         case schools = "School"
@@ -213,14 +213,6 @@ extension ResumeDisplayViewController {
     
 }
 
-
-
-protocol CellSectionable : CaseIterable, RawRepresentable {
-    
-
-    
-}
-
 extension CaseIterable where Self : Equatable{
     
     func index() -> Int{
@@ -239,14 +231,4 @@ extension CaseIterable where Self : Equatable{
     
 }
 
-extension CellSectionable where RawValue == CellSectionDescriptor {
-    
-    
-    
-}
 
-struct CellSectionDescriptor{
-    
-    
-    
-}
