@@ -86,7 +86,7 @@ class ResumeDisplayPageViewController: UIViewController {
         let pdfHeight = resume?.style.pageSize.height ?? 1500
         let pageView = ResumePageView(frame: .zero)
         pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
-        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 60, right: 60)
+        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 20, right: 60)
         
         view.overrideUserInterfaceStyle = .light
         view.addSubview(pageView)
