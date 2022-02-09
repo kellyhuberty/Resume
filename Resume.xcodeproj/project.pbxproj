@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71708E827B0B2660016EA95 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71708E727B0B2660016EA95 /* ContactView.swift */; };
+		C71708EA27B0B3060016EA95 /* ContactHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71708E927B0B3060016EA95 /* ContactHostingViewController.swift */; };
+		C71708EF27B2D4FE0016EA95 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71708EE27B2D4FE0016EA95 /* ContactViewModel.swift */; };
 		C73176DC218E9749002677E6 /* UIFontCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73176DB218E9749002677E6 /* UIFontCodable.swift */; };
 		C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7540E0A21802B2D00F5638F /* ResumePageView.swift */; };
 		C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */; };
@@ -15,8 +18,7 @@
 		C79523992172B01B009441DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523982172B01B009441DC /* AppDelegate.swift */; };
 		C79523A02172B01D009441DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C795239F2172B01D009441DC /* Assets.xcassets */; };
 		C79523A32172B01D009441DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79523A12172B01D009441DC /* LaunchScreen.storyboard */; };
-		C79523AE2172B01D009441DC /* ResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523AD2172B01D009441DC /* ResumeTests.swift */; };
-		C79523B92172B075009441DC /* ResumeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523B82172B075009441DC /* ResumeDisplayViewController.swift */; };
+		C79523B92172B075009441DC /* ResumeDisplayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523B82172B075009441DC /* ResumeDisplayTableViewController.swift */; };
 		C79523BF2172B1CE009441DC /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523BE2172B1CD009441DC /* models.swift */; };
 		C79523C22173C965009441DC /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C12173C965009441DC /* OverviewView.swift */; };
 		C79523C42173C996009441DC /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523C32173C996009441DC /* SchoolView.swift */; };
@@ -32,17 +34,11 @@
 		C79523DB217D238C009441DC /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523DA217D238C009441DC /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C79523AA2172B01D009441DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C795238D2172B01B009441DC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C79523942172B01B009441DC;
-			remoteInfo = Resume;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		C71708E627B041910016EA95 /* Resume.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resume.entitlements; sourceTree = "<group>"; };
+		C71708E727B0B2660016EA95 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		C71708E927B0B3060016EA95 /* ContactHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHostingViewController.swift; sourceTree = "<group>"; };
+		C71708EE27B2D4FE0016EA95 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		C73176DB218E9749002677E6 /* UIFontCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCodable.swift; sourceTree = "<group>"; };
 		C7540E0A21802B2D00F5638F /* ResumePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePageView.swift; sourceTree = "<group>"; };
 		C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayPageViewController.swift; sourceTree = "<group>"; };
@@ -53,10 +49,7 @@
 		C795239F2172B01D009441DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C79523A22172B01D009441DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C79523A42172B01D009441DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C79523A92172B01D009441DC /* ResumeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C79523AD2172B01D009441DC /* ResumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTests.swift; sourceTree = "<group>"; };
-		C79523AF2172B01D009441DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C79523B82172B075009441DC /* ResumeDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayViewController.swift; sourceTree = "<group>"; };
+		C79523B82172B075009441DC /* ResumeDisplayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayTableViewController.swift; sourceTree = "<group>"; };
 		C79523BE2172B1CD009441DC /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		C79523C12173C965009441DC /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		C79523C32173C996009441DC /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
@@ -81,22 +74,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C79523A62172B01D009441DC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71708EB27B2D3D80016EA95 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				C79523B82172B075009441DC /* ResumeDisplayTableViewController.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		C71708EC27B2D3FC0016EA95 /* PDFPage */ = {
+			isa = PBXGroup;
+			children = (
+				C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */,
+				C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */,
+			);
+			path = PDFPage;
+			sourceTree = "<group>";
+		};
+		C71708ED27B2D4440016EA95 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				C71708E927B0B3060016EA95 /* ContactHostingViewController.swift */,
+				C71708E727B0B2660016EA95 /* ContactView.swift */,
+				C71708EE27B2D4FE0016EA95 /* ContactViewModel.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		C75D9C0A2180245F00D5CAA3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C79523B82172B075009441DC /* ResumeDisplayViewController.swift */,
-				C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */,
-				C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */,
+				C71708EB27B2D3D80016EA95 /* Overview */,
+				C71708EC27B2D3FC0016EA95 /* PDFPage */,
+				C71708ED27B2D4440016EA95 /* Contact */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				C79523972172B01B009441DC /* Resume */,
-				C79523AC2172B01D009441DC /* ResumeTests */,
 				C79523962172B01B009441DC /* Products */,
 				C7FE05462197A13300AF4BD0 /* ExternalLibs */,
 				C75D9C0F2180270B00D5CAA3 /* Frameworks */,
@@ -124,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				C79523952172B01B009441DC /* Resume.app */,
-				C79523A92172B01D009441DC /* ResumeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 		C79523972172B01B009441DC /* Resume */ = {
 			isa = PBXGroup;
 			children = (
+				C71708E627B041910016EA95 /* Resume.entitlements */,
 				C79523D421741377009441DC /* Resources */,
 				C79523982172B01B009441DC /* AppDelegate.swift */,
 				C79523D9217BC23B009441DC /* Style */,
@@ -143,15 +155,6 @@
 				C79523A42172B01D009441DC /* Info.plist */,
 			);
 			path = Resume;
-			sourceTree = "<group>";
-		};
-		C79523AC2172B01D009441DC /* ResumeTests */ = {
-			isa = PBXGroup;
-			children = (
-				C79523AD2172B01D009441DC /* ResumeTests.swift */,
-				C79523AF2172B01D009441DC /* Info.plist */,
-			);
-			path = ResumeTests;
 			sourceTree = "<group>";
 		};
 		C79523BA2172B07B009441DC /* ResumeDisplay */ = {
@@ -240,24 +243,6 @@
 			productReference = C79523952172B01B009441DC /* Resume.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C79523A82172B01D009441DC /* ResumeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C79523B52172B01D009441DC /* Build configuration list for PBXNativeTarget "ResumeTests" */;
-			buildPhases = (
-				C79523A52172B01D009441DC /* Sources */,
-				C79523A62172B01D009441DC /* Frameworks */,
-				C79523A72172B01D009441DC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C79523AB2172B01D009441DC /* PBXTargetDependency */,
-			);
-			name = ResumeTests;
-			productName = ResumeTests;
-			productReference = C79523A92172B01D009441DC /* ResumeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,10 +255,6 @@
 				TargetAttributes = {
 					C79523942172B01B009441DC = {
 						CreatedOnToolsVersion = 10.0;
-					};
-					C79523A82172B01D009441DC = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = C79523942172B01B009441DC;
 					};
 				};
 			};
@@ -291,7 +272,6 @@
 			projectRoot = "";
 			targets = (
 				C79523942172B01B009441DC /* Resume */,
-				C79523A82172B01D009441DC /* ResumeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,13 +288,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C79523A72172B01D009441DC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,6 +297,7 @@
 			files = (
 				C73176DC218E9749002677E6 /* UIFontCodable.swift in Sources */,
 				C79523C62173C9AE009441DC /* JobView.swift in Sources */,
+				C71708E827B0B2660016EA95 /* ContactView.swift in Sources */,
 				C79523C42173C996009441DC /* SchoolView.swift in Sources */,
 				C79523D8217BC234009441DC /* Fonts.swift in Sources */,
 				C79523D22173FF11009441DC /* ResumeRepo.swift in Sources */,
@@ -332,33 +306,19 @@
 				C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */,
 				C79523CC2173C9E4009441DC /* OtherView.swift in Sources */,
 				C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */,
-				C79523B92172B075009441DC /* ResumeDisplayViewController.swift in Sources */,
+				C79523B92172B075009441DC /* ResumeDisplayTableViewController.swift in Sources */,
 				C79523BF2172B1CE009441DC /* models.swift in Sources */,
 				C79523C82173C9CB009441DC /* SkillView.swift in Sources */,
 				C79523992172B01B009441DC /* AppDelegate.swift in Sources */,
 				C79523DB217D238C009441DC /* SectionHeaderView.swift in Sources */,
 				C79523CA2173C9D9009441DC /* ProjectView.swift in Sources */,
+				C71708EF27B2D4FE0016EA95 /* ContactViewModel.swift in Sources */,
 				C79523C22173C965009441DC /* OverviewView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C79523A52172B01D009441DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C79523AE2172B01D009441DC /* ResumeTests.swift in Sources */,
+				C71708EA27B0B3060016EA95 /* ContactHostingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C79523AB2172B01D009441DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C79523942172B01B009441DC /* Resume */;
-			targetProxy = C79523AA2172B01D009441DC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C79523A12172B01D009441DC /* LaunchScreen.storyboard */ = {
@@ -492,17 +452,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resume/Resume.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8244XD42E;
 				INFOPLIST_FILE = Resume/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kellyhuberty.Resume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TVOS_DEPLOYMENT_TARGET = 14.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -510,59 +477,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resume/Resume.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8244XD42E;
 				INFOPLIST_FILE = Resume/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kellyhuberty.Resume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		C79523B62172B01D009441DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8244XD42E;
-				INFOPLIST_FILE = ResumeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellyhuberty.ResumeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resume.app/Resume";
-			};
-			name = Debug;
-		};
-		C79523B72172B01D009441DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8244XD42E;
-				INFOPLIST_FILE = ResumeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellyhuberty.ResumeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resume.app/Resume";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TVOS_DEPLOYMENT_TARGET = 14.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -583,15 +515,6 @@
 			buildConfigurations = (
 				C79523B32172B01D009441DC /* Debug */,
 				C79523B42172B01D009441DC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C79523B52172B01D009441DC /* Build configuration list for PBXNativeTarget "ResumeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C79523B62172B01D009441DC /* Debug */,
-				C79523B72172B01D009441DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

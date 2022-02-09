@@ -152,7 +152,4 @@ class OverviewView: UIView {
         self.loadTraitCollection(traitCollection)
         
     }
-    
-    
-
 }

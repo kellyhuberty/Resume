@@ -32,7 +32,6 @@ class SchoolView: ResumeElementView {
             degreeLabel.text = school?.degree
             
             studiedLabel.text = school?.studied?.joined(separator: ", ")
-   
         }
     }
     

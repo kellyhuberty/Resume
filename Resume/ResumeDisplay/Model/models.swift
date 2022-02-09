@@ -70,12 +70,32 @@ class Resume : Decodable{
         let url: URL?
     }
     
+    struct Contact: Decodable {
+        let firstName: String
+        let lastName: String
+        
+        var fields: [Field]
+        
+        struct Field: Decodable, Identifiable {
+            let label: String
+            let value: String
+            let url: URL?
+            let imageName: String?
+        
+            var id: String {
+                return "\(label)-\(value)"
+            }
+            
+        }
+    }
+    
     let sections:Sections
     let schools:[School]
     let jobs:[Job]
     let skills:[Skill]
     let projects:[Project]
     let other:[Other]
+    let contact: Contact
 }
 
 protocol ResumeElement : Decodable{

@@ -15,7 +15,7 @@ class ResumeDisplayPageViewController: UIViewController {
     
     var sandboxUrlPath:URL {
         let sandboxPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return URL(fileURLWithPath: sandboxPath).appendingPathComponent("blah").appendingPathExtension("pdf")
+        return URL(fileURLWithPath: sandboxPath).appendingPathComponent("KellyHubertyResume").appendingPathExtension("pdf")
     }
     
     var currentRendererContext:UIGraphicsPDFRendererContext?
@@ -43,7 +43,6 @@ class ResumeDisplayPageViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.title = NSLocalizedString("PDF Page", comment: "ResumeDisplayPageViewController PDF")
-        
         self.tabBarItem = UITabBarItem(title: self.title, image: UIImage(named: "ExportDoc"), tag: 0)
     }
     
@@ -51,15 +50,11 @@ class ResumeDisplayPageViewController: UIViewController {
     @objc func shareItemAction(_ sender:Any?){
         
         let pdfData = createPDFData()
-        
         let activityVC = UIActivityViewController(activityItems: [pdfData], applicationActivities: nil)
-        
         activityVC.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
-        
         present(activityVC, animated: true) {
             
         }
-        
     }
     
     override func viewDidLoad() {
@@ -69,9 +64,7 @@ class ResumeDisplayPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     
         super.viewDidAppear(animated)
-        
         renderPDF()
-        
     }
     
     func renderPDF(){
@@ -81,48 +74,39 @@ class ResumeDisplayPageViewController: UIViewController {
         }
         
         let pdfData = createPDFData()
-
         let url = sandboxUrlPath
-        
         print("url blah : \(url)")
-        
         try! pdfData.write(to: url, options: [])
-        
         webView.load(pdfData, mimeType: "application/pdf", characterEncodingName: "UTF-8", baseURL: URL(string: "http://localhost")!)
-        
     }
     
     func createPDFData() -> Data{
         
         let pdfWidth = resume?.style.pageSize.width ?? 1200
         let pdfHeight = resume?.style.pageSize.height ?? 1500
-        
         let pageView = ResumePageView(frame: .zero)
-        
         pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
+        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 60, right: 60)
         
-        pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 60)
-        
+        view.overrideUserInterfaceStyle = .light
         view.addSubview(pageView)
         pageView.resume = resume
 
-        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: (8.5 * 72), height: (11 * 72)))
+        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: (8.5 * 600), height: (11 * 600)))
         
         let pdfData = currentRenderer.pdfData { (context) in
             context.beginPage()
-            context.cgContext.scaleBy(x: 0.51, y: 0.51)
+            context.cgContext.scaleBy(x: 4.25, y: 4.25)
+
             self.currentRendererContext = context
             
             pageView.layer.render(in: context.cgContext)
             
             self.currentRendererContext = nil
-
         }
         
         pageView.removeFromSuperview()
-        
         return pdfData
-        
     }
     
 }
@@ -130,28 +114,17 @@ class ResumeDisplayPageViewController: UIViewController {
 extension ResumeDisplayPageViewController : URLReceiver{
     
     @objc func drawUrl(_ url:URL, at rect:CGRect){
-        
         guard let renderContext = currentRendererContext else{
             return
         }
-        
         let urlRect = rect.applying(renderContext.cgContext.userSpaceToDeviceSpaceTransform)
-        
         renderContext.setURL(url, for: urlRect)
-        
     }
-
-    
 }
-
-
 
 @objc protocol URLReceiver{
-    
     func drawUrl(_ url:URL, at:CGRect)
-    
 }
-
 
 extension ResumeDisplayPageViewController : WKNavigationDelegate{
     
@@ -162,7 +135,6 @@ extension ResumeDisplayPageViewController : WKNavigationDelegate{
             return
         }
         
-        
         if url == URL(string: "http://localhost/") {
             decisionHandler(WKNavigationActionPolicy.allow)
         }else{
@@ -170,8 +142,6 @@ extension ResumeDisplayPageViewController : WKNavigationDelegate{
 
             (UIApplication.shared.delegate as? AppDelegate)?.openRemoteUrlLocally(url)
         }
-        
     }
-    
 }
 

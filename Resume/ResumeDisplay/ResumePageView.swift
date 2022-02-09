@@ -12,7 +12,6 @@ class ResumePageView: UIView {
 
     var resume:Resume?{
         didSet{
-            
             reloadResume()
         }
     }
@@ -22,6 +21,7 @@ class ResumePageView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.spacing = 0
         return stackView
         
@@ -55,14 +55,8 @@ class ResumePageView: UIView {
             stack.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
             stack.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor)
-            ])
-        
-        
+        ])
     }
-    
-    
-    
-
     
     func reloadResume(){
         
@@ -70,15 +64,12 @@ class ResumePageView: UIView {
             return
         }
         
-        
         let overviewView = OverviewView()
         overviewView.forceRegular = true
         overviewView.resume = resume
         stack.addArrangedSubview(overviewView)
         
-        
         var views:[UIView] = []
-        
         
         for item in resume.schools{
             let view = SchoolView()
@@ -91,10 +82,8 @@ class ResumePageView: UIView {
         section.contentViews = views
         stack.addArrangedSubview(section)
 
-        
-        
         views = []
-        for item in resume.jobs{
+        for item in resume.jobs {
             let view = JobView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.job = item
@@ -105,10 +94,8 @@ class ResumePageView: UIView {
         section.contentViews = views
         stack.addArrangedSubview(section)
         
-        
-        
         views = []
-        for item in resume.skills{
+        for item in resume.skills {
             let view = SkillView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.skill = item
@@ -120,7 +107,7 @@ class ResumePageView: UIView {
         stack.addArrangedSubview(section)
         
         views = []
-        for item in resume.projects{
+        for item in resume.projects {
             let view = ProjectView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.project = item
@@ -133,7 +120,7 @@ class ResumePageView: UIView {
 
         
         views = []
-        for item in resume.other{
+        for item in resume.other {
             let view = OtherView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.other = item
@@ -163,8 +150,7 @@ class ResumePageView: UIView {
             }
         }
         
-        
-        var contentViews:[UIView] = []{
+        var contentViews:[UIView] = [] {
             didSet{
                 
                 for view in contentView.arrangedSubviews{
@@ -174,7 +160,6 @@ class ResumePageView: UIView {
                 for view in contentViews{
                     contentView.addArrangedSubview(view)
                 }
-                
             }
         }
         
@@ -187,11 +172,10 @@ class ResumePageView: UIView {
                 }else{
                     contentView.axis = .horizontal
                     contentView.distribution = .fillEqually
-                    contentView.spacing = 10
+                    contentView.spacing = 8
                 }
             }
         }
-        
         
         private var headerLabel:UILabel = {
             let label = Label.make()
@@ -233,10 +217,6 @@ class ResumePageView: UIView {
                 contentView.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),
                 contentView.bottomAnchor.constraint(equalTo:self.layoutMarginsGuide.bottomAnchor),
             ])
-            
         }
-        
     }
-    
-    
 }

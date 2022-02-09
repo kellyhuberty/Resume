@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var tabBarController:UITabBarController!
     
-    var tableResumeViewController:ResumeDisplayViewController!
+    var tableResumeViewController:ResumeDisplayTableViewController!
     var pageResumeViewController:ResumeDisplayPageViewController!
-    
+    var contactViewController:ContactHostingViewController!
+
     
     
     let activityIndicator:UIActivityIndicatorView = {
@@ -41,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 self.tableResumeViewController.resume = resume
                 self.pageResumeViewController.resume = resume
+                self.contactViewController.resume = resume
             }
         },
                                       failure:  { (error) in
@@ -60,34 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let resumeVC = ResumeDisplayViewController(nibName: nil, bundle: nil)
+        let resumeVC = ResumeDisplayTableViewController(nibName: nil, bundle: nil)
         let resumeNC = UINavigationController(rootViewController: resumeVC )
         
         let pageVC = ResumeDisplayPageViewController(nibName: nil, bundle: nil)
         let pageNC = UINavigationController(rootViewController: pageVC )
-
+        
+        let contactVC = ContactHostingViewController()
+        let contactNC = UINavigationController(rootViewController: contactVC )
+        
         tableResumeViewController = resumeVC
         pageResumeViewController = pageVC
+        contactViewController = contactVC
         
         tabBarController = UITabBarController(nibName: nil, bundle: nil)
         
-        tabBarController.viewControllers = [resumeNC, pageNC]
+        tabBarController.viewControllers = [resumeNC, pageNC, contactNC]
         
         tabBarController.view.addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
-            
             tabBarController.view.topAnchor.constraint(equalTo:activityIndicator.topAnchor),
             tabBarController.view.bottomAnchor.constraint(equalTo:activityIndicator.bottomAnchor),
             tabBarController.view.leadingAnchor.constraint(equalTo:activityIndicator.leadingAnchor),
             tabBarController.view.trailingAnchor.constraint(equalTo:activityIndicator.trailingAnchor)
-            
-            ])
+        ])
 
-        
         loadResumeData()
-        
-        
+
         window = UIWindow()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

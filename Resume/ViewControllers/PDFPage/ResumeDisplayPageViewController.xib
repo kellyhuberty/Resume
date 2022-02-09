@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,15 +21,16 @@
             <subviews>
                 <wkWebView contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJK-rf-L1s">
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <viewLayoutGuide key="safeArea" id="hRK-ai-B6J"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <edgeInsets key="layoutMargins" top="29" left="8" bottom="8" right="8"/>
-                    <viewLayoutGuide key="safeArea" id="hRK-ai-B6J"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fZN-Ib-E1m"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mJK-rf-L1s" secondAttribute="trailing" id="Rhc-46-R6J"/>
@@ -38,7 +38,7 @@
                 <constraint firstItem="fZN-Ib-E1m" firstAttribute="bottom" secondItem="mJK-rf-L1s" secondAttribute="bottom" id="gKz-0S-qFJ"/>
                 <constraint firstItem="mJK-rf-L1s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gw7-9g-cUN"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fZN-Ib-E1m"/>
+            <point key="canvasLocation" x="130" y="58"/>
         </view>
     </objects>
 </document>

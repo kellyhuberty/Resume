@@ -19,14 +19,12 @@ class ResumeRepo {
         case parseError(Error)
     }
     
-    func fetchResume(success:@escaping((Resume) -> Void), failure:@escaping((ResumeRepoError?) -> Void)){
-        
+    func fetchResume(success:@escaping((Resume) -> Void), failure:@escaping((ResumeRepoError?) -> Void)){        
         fetchRemote(success: { (resume) in
             success(resume)
         }) { (error) in
             self.fetchLocal(success:success, failure:failure)
         }
-        
     }
     
     

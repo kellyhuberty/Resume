@@ -16,7 +16,7 @@
             "missionTitle" : {"name": "Georgia-Bold", "size": 30},
             "missionDetail" : {"name": "Georgia", "size": 28},
             "info" : {"name": "Futura", "size": 19},
-            "title" : {"name": "Futura", "size": 16.5},
+            "title" : {"name": "Futura", "size": 16.0},
             "body" : {"name": "ArialMT", "size": 14.5},
             "detail" : {"name": "Arial-BoldMT", "size": 14.5},
             "label" : {"name": "Arial-BoldMT", "size": 7.5}
@@ -37,7 +37,7 @@
         },
         "projects" : {
             "title":"Personal Projects",
-            "pageOrientation":"vertical"
+            "pageOrientation":"horizontal"
         },
         "other" : {
             "title":"More About Me",
@@ -79,7 +79,7 @@
                 "Performed maintenance on large IT equipment broker websites.",
                 "Developed a small mobile web application and RESTful web service for their primary website.",
                 "Developed an internal tool for consuming inventory data from client emails.",
-                "Created a superset of the Blitz templating language and small compiler script for localizations.",
+                "Created a superset of the Blitz templating language and a small compiler script for localizations.",
                 "Built custom IT part reseller websites for clients on the Magento and Joomla platforms.",
                 "Wrote several custom PHP scripts to deliver IT part data to several brokers.",
             ]
@@ -93,10 +93,24 @@
                 "Re-wrote deployment script for the app using Xcode command line tools, codesign, and Fastlane.",
                 "Wrote first version of an iOS push notification server.",
                 "Developed prototype apps for the realty and appraisal industries.",
-                "Worked on re-write of the realty listing app using Swift, and worked closely with designers on UX modifications.",
+                "Developed a unit tested re-write of the realty listing app using Swift, and worked closely with designers on UX modifications.",
                 "Created new custom renderings/animations using Core Animation to greater enhance user experience.",
-                "Built application network layers to retrieve data from backend services.",
-                "Leveraged XCTest to exercise new code being developed using unit tests."
+                "Built application network layers to retrieve data from backend services."
+            ]
+        },
+        {
+            "title": "Homespotter, LLC",
+            "position": "Software Engineer, iOS",
+            "detail": "2019 - Present",
+            "content": [
+                "Performed maintenance and feature additions to a realty listing app.",
+                "Assisted in white labeling an app for dozens of clients.",
+                "Worked to synchronize two forks of the existing app.",
+                "Made additions to internal web configuration tool for iOS and Android.",
+                "Helped build new 'Activity Feed' and 'Contacts' feature.",
+                "Worked on slow incremental changes to the UX of the existing app to better its user experience.",
+                "Added unit tests to exercise changes in code, and worked to make new features more testable.",
+                "Troubleshooted numerous build, provisioning, and distribution issues."
             ]
         }
     ],
@@ -110,17 +124,7 @@
                 "PHP",
                 "Bash",
                 "Javascript",
-                "Java"
-            ]
-        },
-        {
-            "title": "Markups",
-            "content": [
-                "HTML",
-                "CSS",
-                "JSON",
-                "XML",
-                "Markdown"
+                "Ruby"
             ]
         },
         {
@@ -128,7 +132,6 @@
             "content": [
                 "RESTful Services",
                 "SOAP",
-                "HTTP",
                 "Apache",
                 "mysqld",
                 "RegEx",
@@ -141,22 +144,21 @@
             "title": "Software",
             "content": [
                 "Xcode",
-                "Netbeans",
-                "Eclipse",
                 "Adobe Creative Suite",
                 "Graphic",
                 "BBEdit",
                 "Coda",
                 "Transmit",
-                "OmniGraffle"
+                "Nova"
             ]
         },
         {
-            "title": "Libraries",
+            "title": "iOS Libraries",
             "content": [
                 "Foundation",
                 "UIKit",
                 "AppKit",
+                "SwiftUI",
                 "CoreData",
                 "CoreGraphics",
                 "CoreAnimation",
@@ -168,7 +170,8 @@
                 "ObjC-Runtime",
                 "AVFoundation",
                 "Core Plot",
-                "SQLite"
+                "SQLite",
+                "GRDB"
             ]
         },
         {
@@ -189,9 +192,9 @@
     ],
     "projects": [
         {
-            "title": "Marshmallow",
-            "body": "My own set of libraries to assist in rapid iOS Development. MarshmallowCore is open source. I am currently re-writing parts in Swift.",
-            "url": "http://github.com/kellyhuberty/MarshmallowCore"
+            "title": "CloudKitSynchronizer",
+            "body": "My own data library designed to sync SQLite tables to Apple's CloudKit.",
+            "url": "http://github.com/kellyhuberty/CloudKitSynchronizer"
         },
         {
             "title": "Stack Overflow",
@@ -213,12 +216,42 @@
         },
         {
             "title": "After Work",
-            "body" : "I enjoy drawing, design, rock music, automotive repair, rollerblading, camping, and spending time with my family."
+            "body" : "I enjoy drawing, design, rock music, automotive repair, camping, and spending time with my family."
         },
         {
             "title": "This Resume is an App",
             "body" : "This resume was generated by an app I wrote. Additional references are available upon request.",
             "url" : "http://github.com/kellyhuberty/resume"
         }
-    ]
+    ],
+    "contact": {
+        "firstName": "Kelly",
+        "lastName": "Huberty",
+        "fields": [
+            {
+                "label": "Phone",
+                "value": "(507) 202-9368",
+                "url": "tel:5072029368",
+                "imageName": "phone"
+            },
+            {
+                "label": "Email",
+                "value": "kellyhuberty@gmail.com",
+                "url": "mailto:kellyhuberty@gmail.com",
+                "imageName": "envelope"
+            },
+            {
+                "label": "GitHub",
+                "value": "github.com/kellyhuberty",
+                "url": "http://github.com/kellyhuberty",
+                "imageName": "chevron.left.forwardslash.chevron.right"
+            },
+            {
+                "label": "LinkedIn",
+                "value": "www.linkedin.com/in/kellyhuberty",
+                "url": "http://www.linkedin.com/in/kellyhuberty",
+                "imageName": "person.crop.square"
+            }
+        ]
+    }
 }

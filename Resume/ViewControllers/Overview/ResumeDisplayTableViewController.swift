@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResumeDisplayViewController: UITableViewController {
+class ResumeDisplayTableViewController: UITableViewController {
     
     var resume: Resume?{
         didSet{
@@ -26,7 +26,6 @@ class ResumeDisplayViewController: UITableViewController {
         case other = "Other"
     
     }
-    
     
     //MARK: init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -177,7 +176,7 @@ class ResumeDisplayViewController: UITableViewController {
 
 //MARK: UITableViewDataSource methods
 
-extension ResumeDisplayViewController {
+extension ResumeDisplayTableViewController {
     
 
     func configureCell(_ cell:GeneralCell, for section:CellSection, row:Int){
