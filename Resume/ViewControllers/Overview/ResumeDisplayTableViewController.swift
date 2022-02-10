@@ -165,7 +165,7 @@ class ResumeDisplayTableViewController: UITableViewController {
         guard let linkable = view.resumeElement as? ExternallyLinkable else {
             return
         }
-        guard let url = linkable.url as? URL else {
+        guard let url = linkable.url else {
             return
         }
         

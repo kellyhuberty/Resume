@@ -8,9 +8,8 @@ This app downloads content from a network connection about my latest work experi
 If the resume data can not be downloaded from my server, it will use the `resume.json` file from the app bundle instead.
 
 ## Requirements 
-* Xcode 10
+* Xcode 13
 * An iOS device (Unless you want to just view on the simulator.)
 
 ## Known Issues
-* If using dynamic font sizes, the PDF will render at larger sizes. **Workaround:** Turn off dynamic fonts when exporting a PDF.
 * Certain export options such as Mail and Message do not work in the simulator. **Workaround:** Use those on a device.

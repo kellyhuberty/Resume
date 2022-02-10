@@ -89,6 +89,9 @@ class ResumeDisplayPageViewController: UIViewController {
         pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 20, right: 60)
         
         view.overrideUserInterfaceStyle = .light
+        view.minimumContentSizeCategory = .medium
+        view.maximumContentSizeCategory = .medium
+
         view.addSubview(pageView)
         pageView.resume = resume
 
