@@ -8,10 +8,9 @@
 
 import UIKit
 
-public protocol GeneralCell : class{
+public protocol GeneralCell: AnyObject {
     var view:UIView? { get set }
 }
-
 
 class GeneralTableViewCell: UITableViewCell, GeneralCell {
     
@@ -43,8 +42,5 @@ class GeneralTableViewCell: UITableViewCell, GeneralCell {
             view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-        
     }
-    
-
 }
