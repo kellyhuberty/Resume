@@ -177,12 +177,19 @@ class ResumePageView: UIView {
             }
         }
         
-        private var headerLabel:UILabel = {
+        private var headerLabel:PDFLabel = {
             let label = Label.make()
             label.backgroundColor = .black
             label.font = Fonts.still.sectionHeader
             label.textColor = .white
             return label
+        }()
+        
+        private var headerLabelBackround:UIView = {
+            let bgView = UIView()
+            bgView.backgroundColor = .black
+            bgView.translatesAutoresizingMaskIntoConstraints = false
+            return bgView
         }()
         
         private var contentView:UIStackView = {
@@ -203,11 +210,17 @@ class ResumePageView: UIView {
         }
         
         func loadLayout(){
-            
+            self.addSubview(headerLabelBackround)
             self.addSubview(headerLabel)
             self.addSubview(contentView)
 
             NSLayoutConstraint.activate([
+                
+                headerLabelBackround.topAnchor.constraint(equalTo:headerLabel.topAnchor),
+                headerLabelBackround.leadingAnchor.constraint(equalTo:headerLabel.leadingAnchor),
+                headerLabelBackround.trailingAnchor.constraint(equalTo:headerLabel.trailingAnchor),
+                headerLabelBackround.bottomAnchor.constraint(equalTo:headerLabel.bottomAnchor),
+                
                 headerLabel.topAnchor.constraint(equalTo:self.layoutMarginsGuide.topAnchor),
                 headerLabel.leadingAnchor.constraint(equalTo:self.layoutMarginsGuide.leadingAnchor),
                 headerLabel.trailingAnchor.constraint(equalTo:self.layoutMarginsGuide.trailingAnchor),

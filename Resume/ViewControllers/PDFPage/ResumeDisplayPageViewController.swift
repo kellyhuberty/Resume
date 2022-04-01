@@ -88,23 +88,31 @@ class ResumeDisplayPageViewController: UIViewController {
         pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
         pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 20, right: 60)
         
+        
         view.overrideUserInterfaceStyle = .light
         view.minimumContentSizeCategory = .medium
         view.maximumContentSizeCategory = .medium
+        
+        pageView.resume = resume
+        
+        let rect = CGRect(x: 0, y: 0, width: (8.5 * 600), height: (11 * 600))
 
         view.addSubview(pageView)
-        pageView.resume = resume
 
-        let currentRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: (8.5 * 600), height: (11 * 600)))
+        let currentRenderer = UIGraphicsPDFRenderer(bounds: rect)
         
         let pdfData = currentRenderer.pdfData { (context) in
             context.beginPage()
             context.cgContext.scaleBy(x: 4.25, y: 4.25)
-
+            
             self.currentRendererContext = context
             
+            UIGraphicsPushContext(context.cgContext)
+            PDFLabel.renderingPDF = true
             pageView.layer.render(in: context.cgContext)
-            
+            PDFLabel.renderingPDF = false
+            UIGraphicsPopContext()
+              
             self.currentRendererContext = nil
         }
         

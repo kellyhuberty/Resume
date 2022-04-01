@@ -52,7 +52,7 @@ class ResumeElementView: UIView {
     
     //MARK: Basic structure
     let titleLabel:UILabel = {
-        let label = UILabel()
+        let label = PDFLabel()
         label.font = Fonts.changing.title
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +62,7 @@ class ResumeElementView: UIView {
     }()
     
     let detailLabel:UILabel = {
-        let label = UILabel()
+        let label = PDFLabel()
         label.font = Fonts.changing.detail
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +72,7 @@ class ResumeElementView: UIView {
     }()
     
     let bodyLabel:UILabel = {
-        let label = UILabel()
+        let label = PDFLabel()
         label.font = Fonts.changing.body
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -159,9 +159,9 @@ class ResumeElementView: UIView {
 class Label{
     
     
-    static func make() -> UILabel{
+    static func make() -> PDFLabel{
         
-        let label = UILabel()
+        let label = PDFLabel()
         label.font = Fonts.changing.title
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -178,7 +178,7 @@ class Label{
 
 
 
-class URLLabel : UILabel{
+class URLLabel : PDFLabel{
     
     var url : URL?
     
