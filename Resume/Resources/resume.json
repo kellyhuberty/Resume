@@ -87,7 +87,7 @@
         {
             "title": "CoreLogic Solutions, LLC",
             "position": "Software Engineer, Pro",
-            "detail": "2015 - Present",
+            "detail": "2015 - 2019",
             "content": [
                 "Performed maintenance and feature additions to a realty listing app.",
                 "Re-wrote deployment script for the app using Xcode command line tools, codesign, and Fastlane.",
@@ -101,7 +101,7 @@
         {
             "title": "Homespotter, LLC",
             "position": "Software Engineer, iOS",
-            "detail": "2019 - Present",
+            "detail": "2019 - 2022",
             "content": [
                 "Performed maintenance and feature additions to a realty listing app.",
                 "Assisted in white labeling an app for dozens of clients.",
@@ -111,6 +111,20 @@
                 "Worked on slow incremental changes to the UX of the existing app to better its user experience.",
                 "Added unit tests to exercise changes in code, and worked to make new features more testable.",
                 "Troubleshooted numerous build, provisioning, and distribution issues."
+            ]
+        },
+        {
+            "title": "Sandboxx Family Communication",
+            "position": "Senior iOS Engineer",
+            "detail": "2022 - Present",
+            "content": [
+                "Maintained existing UIKit and SwiftUI codebase.",
+                "Helped coordinate teammate developers distributed worldwide.",
+                "Build out the Sandboxx App's Muster/Waypoints feature to help military recruiters keep in contact with prospective recruits.",
+                "Suggested use of different architecture and patterns to be used for new feature build outs.",
+                "Optimized build times using various tools such as SPM, Cocoapods, Tuist, and newer Xcode settings for Apple Silicon.",
+                "Helped refine a robust branching and release process with continuous delivery.",
+                "Worked across teams to draft backend/client API contracts."
             ]
         }
     ],
@@ -159,6 +173,7 @@
                 "UIKit",
                 "AppKit",
                 "SwiftUI",
+                "Combine",
                 "CoreData",
                 "CoreGraphics",
                 "CoreAnimation",
@@ -212,11 +227,11 @@
         },
         {
             "title": "Publications",
-            "body" : "I served as RCTC’s Newspaper editor-in-chief for one year and and their layout manager for three years. I won an award for page design in 2008."
+            "body" : "I served as RCTC’s Newspaper editor-in-chief for one year and their layout manager for three years. I won an award for page design in 2008."
         },
         {
             "title": "After Work",
-            "body" : "I enjoy drawing, design, rock music, automotive repair, camping, and spending time with my family."
+            "body" : "I enjoy tinkering with my own personal apps, drawing, design, rock music, automotive repair, camping, and spending time with my family."
         },
         {
             "title": "This Resume is an App",
