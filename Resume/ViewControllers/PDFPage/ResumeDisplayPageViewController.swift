@@ -88,10 +88,13 @@ class ResumeDisplayPageViewController: UIViewController {
         pageView.frame = CGRect(x: 0, y: 0, width: pdfWidth, height: pdfHeight)
         pageView.layoutMargins = UIEdgeInsets(top: 0, left: 60, bottom: 20, right: 60)
         
-        
-        view.overrideUserInterfaceStyle = .light
-        view.minimumContentSizeCategory = .medium
-        view.maximumContentSizeCategory = .medium
+        if #available(iOS 15.0, *) {
+            view.overrideUserInterfaceStyle = .light
+            view.minimumContentSizeCategory = .medium
+            view.maximumContentSizeCategory = .medium
+        } else {
+            // Fallback on earlier versions
+        }
         
         pageView.resume = resume
         
