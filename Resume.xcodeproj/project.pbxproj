@@ -11,6 +11,7 @@
 		C71708EA27B0B3060016EA95 /* ContactHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71708E927B0B3060016EA95 /* ContactHostingViewController.swift */; };
 		C71708EF27B2D4FE0016EA95 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71708EE27B2D4FE0016EA95 /* ContactViewModel.swift */; };
 		C73176DC218E9749002677E6 /* UIFontCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73176DB218E9749002677E6 /* UIFontCodable.swift */; };
+		C74F0D4B27E0D385006D3F4A /* PDFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F0D4A27E0D385006D3F4A /* PDFLabel.swift */; };
 		C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7540E0A21802B2D00F5638F /* ResumePageView.swift */; };
 		C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */; };
 		C75D9C0E2180252400D5CAA3 /* ResumeDisplayPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */; };
@@ -40,6 +41,7 @@
 		C71708E927B0B3060016EA95 /* ContactHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHostingViewController.swift; sourceTree = "<group>"; };
 		C71708EE27B2D4FE0016EA95 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		C73176DB218E9749002677E6 /* UIFontCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCodable.swift; sourceTree = "<group>"; };
+		C74F0D4A27E0D385006D3F4A /* PDFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PDFLabel.swift; path = Resume/ResumeDisplay/PDFLabel.swift; sourceTree = SOURCE_ROOT; };
 		C7540E0A21802B2D00F5638F /* ResumePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePageView.swift; sourceTree = "<group>"; };
 		C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDisplayPageViewController.swift; sourceTree = "<group>"; };
 		C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResumeDisplayPageViewController.xib; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */,
 				C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */,
+				C74F0D4A27E0D385006D3F4A /* PDFLabel.swift */,
 			);
 			path = PDFPage;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				C79523DB217D238C009441DC /* SectionHeaderView.swift in Sources */,
 				C79523CA2173C9D9009441DC /* ProjectView.swift in Sources */,
 				C71708EF27B2D4FE0016EA95 /* ContactViewModel.swift in Sources */,
+				C74F0D4B27E0D385006D3F4A /* PDFLabel.swift in Sources */,
 				C79523C22173C965009441DC /* OverviewView.swift in Sources */,
 				C71708EA27B0B3060016EA95 /* ContactHostingViewController.swift in Sources */,
 			);
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -441,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
