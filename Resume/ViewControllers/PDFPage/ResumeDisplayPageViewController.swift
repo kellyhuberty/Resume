@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import WebKit
+import PDFKit
 
 class ResumeDisplayPageViewController: UIViewController {
-
-    @IBOutlet var webView:WKWebView!
+  
+    var pdfView = PDFView()
     
     var sandboxUrlPath:URL {
         let sandboxPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -22,14 +22,12 @@ class ResumeDisplayPageViewController: UIViewController {
 
     var resume: Resume?{
         didSet{
-            
             if resume != nil {
                 let barButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareItemAction(_:)))
                 navigationItem.rightBarButtonItem = barButtonItem
             }else{
                 navigationItem.rightBarButtonItem = nil
             }
-            
             renderPDF()
         }
     }
@@ -58,26 +56,37 @@ class ResumeDisplayPageViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        webView.navigationDelegate = self
+
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(pdfView)
+        
+        NSLayoutConstraint.activate([
+            self.view.topAnchor.constraint(equalTo: pdfView.topAnchor),
+            self.view.bottomAnchor.constraint(equalTo: pdfView.bottomAnchor),
+            self.view.leadingAnchor.constraint(equalTo: pdfView.leadingAnchor),
+            self.view.trailingAnchor.constraint(equalTo: pdfView.trailingAnchor)
+        ])
     }
     
     override func viewDidAppear(_ animated: Bool) {
-    
-        super.viewDidAppear(animated)
         renderPDF()
+        super.viewDidAppear(animated)
     }
     
     func renderPDF(){
-        
-        guard webView != nil else{
-            return
-        }
-        
+
         let pdfData = createPDFData()
         let url = sandboxUrlPath
+
         print("url blah : \(url)")
         try! pdfData.write(to: url, options: [])
-        webView.load(pdfData, mimeType: "application/pdf", characterEncodingName: "UTF-8", baseURL: URL(string: "http://localhost")!)
+        
+        pdfView.maxScaleFactor = 4.0;
+        pdfView.minScaleFactor = pdfView.scaleFactorForSizeToFit;
+        pdfView.autoScales = true;
+       
+        
+        pdfView.document = PDFDocument(data: pdfData)
     }
     
     func createPDFData() -> Data{
@@ -92,8 +101,6 @@ class ResumeDisplayPageViewController: UIViewController {
             view.overrideUserInterfaceStyle = .light
             view.minimumContentSizeCategory = .medium
             view.maximumContentSizeCategory = .medium
-        } else {
-            // Fallback on earlier versions
         }
         
         pageView.resume = resume
@@ -139,23 +146,3 @@ extension ResumeDisplayPageViewController : URLReceiver{
 @objc protocol URLReceiver{
     func drawUrl(_ url:URL, at:CGRect)
 }
-
-extension ResumeDisplayPageViewController : WKNavigationDelegate{
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        guard let url = navigationAction.request.url else{
-            decisionHandler(WKNavigationActionPolicy.cancel)
-            return
-        }
-        
-        if url == URL(string: "http://localhost/") {
-            decisionHandler(WKNavigationActionPolicy.allow)
-        }else{
-            decisionHandler(WKNavigationActionPolicy.cancel)
-
-            (UIApplication.shared.delegate as? AppDelegate)?.openRemoteUrlLocally(url)
-        }
-    }
-}
-

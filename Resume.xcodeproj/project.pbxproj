@@ -14,7 +14,6 @@
 		C74F0D4B27E0D385006D3F4A /* PDFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F0D4A27E0D385006D3F4A /* PDFLabel.swift */; };
 		C7540E0B21802B2D00F5638F /* ResumePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7540E0A21802B2D00F5638F /* ResumePageView.swift */; };
 		C75D9C0D2180252400D5CAA3 /* ResumeDisplayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D9C0B2180252400D5CAA3 /* ResumeDisplayPageViewController.swift */; };
-		C75D9C0E2180252400D5CAA3 /* ResumeDisplayPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75D9C0C2180252400D5CAA3 /* ResumeDisplayPageViewController.xib */; };
 		C75D9C112180270C00D5CAA3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75D9C102180270C00D5CAA3 /* WebKit.framework */; };
 		C79523992172B01B009441DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79523982172B01B009441DC /* AppDelegate.swift */; };
 		C79523A02172B01D009441DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C795239F2172B01D009441DC /* Assets.xcassets */; };
@@ -65,6 +64,7 @@
 		C79523D521741680009441DC /* resume.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resume.json; sourceTree = "<group>"; };
 		C79523D7217BC234009441DC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C79523DA217D238C009441DC /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		C7D6635B2AD675E800EF9649 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/iOSSupport/System/Library/Frameworks/PDFKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,7 @@
 		C75D9C0F2180270B00D5CAA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7D6635B2AD675E800EF9649 /* PDFKit.framework */,
 				C75D9C102180270C00D5CAA3 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -287,7 +288,6 @@
 			files = (
 				C79523A32172B01D009441DC /* LaunchScreen.storyboard in Resources */,
 				C79523D621741680009441DC /* resume.json in Resources */,
-				C75D9C0E2180252400D5CAA3 /* ResumeDisplayPageViewController.xib in Resources */,
 				C79523A02172B01D009441DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8244XD42E;
 				INFOPLIST_FILE = Resume/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,7 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8244XD42E;
 				INFOPLIST_FILE = Resume/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
